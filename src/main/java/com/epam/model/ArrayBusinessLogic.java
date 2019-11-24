@@ -16,6 +16,62 @@ public class ArrayBusinessLogic implements ArrayModel {
     }
 
     @Override
+    public int[] copyPresentInBoth(int[] srcArray1, int[] srcArray2) {
+        int[] newArray = new int[0];
+        boolean[] dublicatesInArray1;
+        boolean[] dublicatesInArray2;
+        srcArray1 = deleteDuplicates(srcArray1, 1);
+        srcArray2 = deleteDuplicates(srcArray2, 1);
+        dublicatesInArray1 = findDuplicatesInAnother(srcArray1, srcArray2);
+        dublicatesInArray2 = findDuplicatesInAnother(srcArray2, srcArray1);
+        srcArray1 = removeElementsByLabel(srcArray1,dublicatesInArray1,true);
+        srcArray2 = removeElementsByLabel(srcArray2,dublicatesInArray2,true);
+        newArray = copyArray(newArray,srcArray1);
+        newArray = copyArray(newArray,srcArray2);
+        newArray = deleteDuplicates(newArray, 1);
+        return newArray;
+    }
+
+    @Override
+    public int[] copyPresentInOne(int[] srcArray1, int[] srcArray2) {
+        int[] newArray = new int[0];
+        boolean[] dublicatesInArray1;
+        boolean[] dublicatesInArray2;
+        srcArray1 = deleteDuplicates(srcArray1, 1);
+        srcArray2 = deleteDuplicates(srcArray2, 1);
+        dublicatesInArray1 = findDuplicatesInAnother(srcArray1, srcArray2);
+        dublicatesInArray2 = findDuplicatesInAnother(srcArray2, srcArray1);
+        srcArray1 = removeElementsByLabel(srcArray1,dublicatesInArray1,false);
+        srcArray2 = removeElementsByLabel(srcArray2,dublicatesInArray2,false);
+        newArray = copyArray(newArray,srcArray1);
+        newArray = copyArray(newArray,srcArray2);
+        newArray = deleteDuplicates(newArray, 1);
+        return newArray;
+    }
+
+    private boolean[] findDuplicatesInAnother(int[] array, int[] duplicatesArray) {
+        boolean[] duplicates = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < duplicatesArray.length; j++) {
+                if (array[i] == duplicatesArray[j]) {
+                    duplicates[i] = true;
+                }
+            }
+        }
+        return duplicates;
+    }
+
+    private int[] removeElementsByLabel(int[] array, boolean[] labels, boolean label){
+        int[] newArray = new int[0];
+        for (int i = 0; i < labels.length; i++) {
+            if (labels[i] == label) {
+                newArray = copyArray(newArray, new int[]{array[i]});
+            }
+        }
+        return newArray;
+    }
+
+    @Override
     public int[] deleteDuplicates(int[] array, int maxRepeatNumber) {
         int[] newArray = new int[0];
         boolean[] duplicates = new boolean[array.length];
@@ -33,11 +89,7 @@ public class ArrayBusinessLogic implements ArrayModel {
                 counter = 0;
             }
         }
-        for (int i = 0; i < duplicates.length; i++) {
-            if (!duplicates[i]) {
-                newArray = copyArray(newArray, new int[]{array[i]});
-            }
-        }
+        newArray = removeElementsByLabel(array,duplicates,false);
         return newArray;
     }
 
