@@ -1,7 +1,5 @@
 package com.epam.model;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 public class ArrayBusinessLogic implements ArrayModel {
 
     @Override
@@ -19,7 +17,28 @@ public class ArrayBusinessLogic implements ArrayModel {
 
     @Override
     public int[] deleteDuplicates(int[] array, int maxRepeatNumber) {
-        return new int[0];
+        int[] newArray = new int[0];
+        boolean[] duplicates = new boolean[array.length];
+        int counter = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (!duplicates[i]) {
+                for (int j = i; j < array.length; j++) {
+                    if (array[i] == array[j]) {
+                        counter++;
+                        if (counter > maxRepeatNumber) {
+                            duplicates[j] = true;
+                        }
+                    }
+                }
+                counter = 0;
+            }
+        }
+        for (int i = 0; i < duplicates.length; i++) {
+            if (!duplicates[i]) {
+                newArray = copyArray(newArray, new int[]{array[i]});
+            }
+        }
+        return newArray;
     }
 
     @Override
@@ -27,12 +46,10 @@ public class ArrayBusinessLogic implements ArrayModel {
         int[] newArray = new int[0];
         int value;
         for (int i = 0; i < array.length - 1; i++) {
-            System.out.println("i = " + i);
             value = array[i];
             while (value == array[i + 1]) {
                 if (i < array.length - 2) {
                     i++;
-                    System.out.println("ii = " + i);
                 } else break;
             }
             newArray = copyArray(newArray, new int[]{value});
