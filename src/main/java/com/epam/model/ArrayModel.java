@@ -8,6 +8,6 @@ public interface ArrayModel {
 
     int[] deleteDuplicates(int[] array, int maxRepeatNumber);
 
-    int[] deleteTogetherDublicates (int[] array);
+    int[] deleteTogetherDuplicates (int[] array);
 
 }
