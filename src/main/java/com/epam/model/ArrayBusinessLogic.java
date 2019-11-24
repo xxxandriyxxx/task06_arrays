@@ -1,5 +1,7 @@
 package com.epam.model;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 public class ArrayBusinessLogic implements ArrayModel {
 
     @Override
@@ -25,13 +27,18 @@ public class ArrayBusinessLogic implements ArrayModel {
         int[] newArray = new int[0];
         int value;
         for (int i = 0; i < array.length - 1; i++) {
+            System.out.println("i = " + i);
             value = array[i];
             while (value == array[i + 1]) {
                 if (i < array.length - 2) {
                     i++;
+                    System.out.println("ii = " + i);
                 } else break;
             }
             newArray = copyArray(newArray, new int[]{value});
+        }
+        if (array[array.length - 2] != array[array.length - 1]) {
+            newArray = copyArray(newArray, new int[]{array[array.length - 1]});
         }
         return newArray;
     }
