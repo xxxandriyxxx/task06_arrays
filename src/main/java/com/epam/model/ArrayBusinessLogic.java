@@ -21,7 +21,18 @@ public class ArrayBusinessLogic implements ArrayModel {
     }
 
     @Override
-    public int[] deleteTogetherDublicates(int[] array) {
-        return new int[0];
+    public int[] deleteTogetherDuplicates(int[] array) {
+        int[] newArray = new int[0];
+        int value;
+        for (int i = 0; i < array.length - 1; i++) {
+            value = array[i];
+            while (value == array[i + 1]) {
+                if (i < array.length - 2) {
+                    i++;
+                } else break;
+            }
+            newArray = copyArray(newArray, new int[]{value});
+        }
+        return newArray;
     }
 }
