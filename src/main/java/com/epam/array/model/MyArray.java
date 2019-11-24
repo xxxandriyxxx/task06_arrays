@@ -1,4 +1,4 @@
-package com.epam.model;
+package com.epam.array.model;
 
 public class MyArray {
     private static int max = 10;
