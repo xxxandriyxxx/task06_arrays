@@ -4,9 +4,9 @@ public interface ArrayModel {
 
     int[] generateArray(int size);
 
-    int[] copyArray(int[] initialArray, int[] cloneArray);
+    int[] copyArray(int[] destArray, int[] srcArray);
 
-    int[] deleteDublicates(int[] array, int maxRepeatNumber);
+    int[] deleteDuplicates(int[] array, int maxRepeatNumber);
 
     int[] deleteTogetherDublicates (int[] array);
 
