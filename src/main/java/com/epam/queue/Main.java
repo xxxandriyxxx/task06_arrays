@@ -22,11 +22,12 @@ public class Main {
         print(queue, "remove(mercedes)");
 
         queue.offer(new Car("Nissan"));
-        print(queue,"offer()");
+        print(queue, "offer()");
 
         System.out.println("---------- peek()");
         System.out.println(queue.peek());
 
+//        MyQueue<String> queue1 = new MyQueue<>(); //cannot be applied
 
     }
 
