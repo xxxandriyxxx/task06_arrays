@@ -1,23 +1,11 @@
 package com.epam.game;
 
-import com.epam.game.Model.Door;
-import com.epam.game.Model.Hero;
-
-import java.util.Arrays;
+import com.epam.game.View.View;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
 
-        Hero hero = new Hero();
-        System.out.println(hero);
-
-
-
-
+        new View().show();
     }
-
-
 }
