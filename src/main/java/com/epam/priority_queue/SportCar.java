@@ -1,4 +1,4 @@
-package com.epam.queue;
+package com.epam.priority_queue;
 
 public class SportCar extends Car {
 
@@ -8,6 +8,6 @@ public class SportCar extends Car {
 
     @Override
     public String toString() {
-        return "SportCar " + name;
+        return name;
     }
 }
