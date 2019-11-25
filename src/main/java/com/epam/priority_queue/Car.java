@@ -1,4 +1,4 @@
-package com.epam.queue;
+package com.epam.priority_queue;
 
 public class Car implements Comparable<Car> {
 
@@ -10,11 +10,11 @@ public class Car implements Comparable<Car> {
 
     @Override
     public String toString() {
-        return "Car " + name;
+        return name;
     }
 
     @Override
-    public int compareTo(Car o) {
-        return 0;
+    public int compareTo(Car car) {
+        return this.name.compareTo(car.name);
     }
 }
