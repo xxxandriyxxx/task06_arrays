@@ -7,4 +7,11 @@ public class Hero {
     public Hero() {
         health = 25;
     }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "health=" + health +
+                '}';
+    }
 }
