@@ -4,7 +4,9 @@ import java.util.*;
 
 public class MyDeque implements Deque {
 
+
     private Object[] items;
+
 
     public MyDeque() {
         items = new Object[0];
@@ -45,7 +47,7 @@ public class MyDeque implements Deque {
         try {
             addFirst(o);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
@@ -55,7 +57,7 @@ public class MyDeque implements Deque {
         try {
             addLast(o);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

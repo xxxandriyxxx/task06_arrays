@@ -1,6 +1,6 @@
 package com.epam.queue;
 
-public class Car implements Comparable<Car> {
+public class Car {
 
     protected String name;
 
@@ -13,8 +13,4 @@ public class Car implements Comparable<Car> {
         return "Car " + name;
     }
 
-    @Override
-    public int compareTo(Car o) {
-        return 0;
-    }
 }
