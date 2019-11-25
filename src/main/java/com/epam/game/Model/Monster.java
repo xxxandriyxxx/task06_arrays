@@ -14,4 +14,11 @@ public class Monster {
         max -= min;
         return (int) (Math.random() * ++max) + min;
     }
+
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "health=" + health +
+                '}';
+    }
 }
