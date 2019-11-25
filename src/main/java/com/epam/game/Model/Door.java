@@ -5,6 +5,7 @@ import java.util.Random;
 public class Door {
 
     boolean isMonster;
+    Monster monster;
     int artifact;
     private final int min = 10;
     private final int max = 80;
@@ -12,7 +13,11 @@ public class Door {
 
     public Door() {
         isMonster = random.nextBoolean();
-        artifact = rnd(min, max);
+        if (isMonster) {
+            monster = new Monster();
+        } else {
+            artifact = rnd(min, max);
+        }
     }
 
     private static int rnd(int min, int max) {
@@ -24,6 +29,7 @@ public class Door {
     public String toString() {
         return "Door{" +
                 "isMonster=" + isMonster +
+                ", monster=" + monster +
                 ", artifact=" + artifact +
                 '}';
     }
