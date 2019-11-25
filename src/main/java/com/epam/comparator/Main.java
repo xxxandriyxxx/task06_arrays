@@ -54,5 +54,17 @@ public class Main {
         System.out.println(" List: " + list2.toString());
 
 
+//        binary search
+        System.out.println("--------------------- binary search by field 'name' -------");
+        System.out.println("{China: Kyiv} index = " + Arrays.binarySearch(countries,
+                new Country("China", "Kyiv")));
+        System.out.println("{China: Kyiv} index = " + Collections.binarySearch(list,
+                new Country("China", "Kyiv"), null));
+
+        System.out.println("--------------------- binary search by field 'capital' -------");
+        System.out.println("{Ukraine: Brussels} index = " + Arrays.binarySearch(countries2,
+                new Country("Ukraine", "Brussels")));
+        System.out.println("{Ukraine: Brussels} index = " + Collections.binarySearch(list2,
+                new Country("Ukraine", "Brussels"), null));
     }
 }
