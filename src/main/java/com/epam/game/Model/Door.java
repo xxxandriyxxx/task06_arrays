@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Door {
 
-    boolean isMonster;
-    Monster monster;
-    int artifact;
+    public boolean isMonster;
+    public Monster monster;
+    public int artifact;
     private final int min = 10;
     private final int max = 80;
     final Random random = new Random();
