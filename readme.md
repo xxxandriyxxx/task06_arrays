@@ -1,12 +1,12 @@
-### Tasks
+## Tasks
 
-####1
+###1
 1. Write your generic class – container with units. You can put and get units from container. 
 Try to implement it using wildcards.
 2. Write your PriorityQueue class using generics.
 3. Try how you can add string into List<Integers>.
 
-####2
+###2
 1. Logical tasks for arrays (see an additional file).
 2. Create a container that encapsulates an array of String, and that only adds Strings and gets Strings, 
 so that there are no casting issues during use. If the internal array isn’t big enough for the next add, 
@@ -19,7 +19,7 @@ that only cares about the second String and demonstrate that sorting works prope
 search using your Comparator.
 4. Сreate a Deque class and test it.
 
-#####2.1
+###2.1
 A. Дано два масиви. Сформувати третій масив, що складається з тих елементів, які: а) присутні в обох масивах; 
 б) присутні тільки в одному з масивів.
 
