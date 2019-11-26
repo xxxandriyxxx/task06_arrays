@@ -1,25 +1,38 @@
 package com.epam.game.Controller;
 
 import com.epam.game.Model.BusinessLogic;
+import com.epam.game.Model.Model;
 
 public class ControllerImpl implements Controller {
 
-    BusinessLogic businessLogic;
+    private Model model;
 
     public ControllerImpl() {
-        this.businessLogic = new BusinessLogic();
+        this.model = new BusinessLogic();
     }
 
+    @Override
+    public void showHero() {
+        model.showHero();
+    }
+
+    @Override
     public void getDoors() {
-        businessLogic.getDoors();
+        model.getDoors();
     }
 
+    @Override
     public void dieImmediately() {
-        businessLogic.dieImmediately();
+        model.dieImmediately();
     }
 
+    @Override
     public void winImmediately() {
-        businessLogic.winImmediately();
+        model.winImmediately();
     }
 
+    @Override
+    public void winSequence() {
+        model.winSequence();
+    }
 }
