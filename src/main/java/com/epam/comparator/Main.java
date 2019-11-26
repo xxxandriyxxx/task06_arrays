@@ -36,7 +36,7 @@ public class Main {
         System.out.println("--------------------- compare by field 'capital' -------");
         System.out.println("Array: " + Arrays.toString(countries));
         System.out.println(" List: " + list.toString());
-        
+
 //        binary search
         System.out.println("--------------------- binary search by field 'name' -------");
         System.out.println("{China: aaa} index = " + Arrays.binarySearch(countries,
